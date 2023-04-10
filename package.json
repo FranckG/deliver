@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "isomorphic-git": "^1.23.0",
+    "meow": "^11.0.0",
+    "nodegit": "^0.27.0",
+    "prompt-sync": "^4.2.0",
+    "properties-file": "^2.2.3",
+    "properties-reader": "^2.2.0",
+    "simple-git": "^3.17.0"
+  }
+}
