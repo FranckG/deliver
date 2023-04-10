@@ -82,12 +82,11 @@ if (isCascadingRequested) {
 /*
  * create tag
  */
-const output = execSync('mvn -Dexpression=project.version --non-recursive --batch-mode help:evaluate', { encoding: 'utf-8' });  // the default is 'buffer'
-console.log(output)
-await git.addAnnotatedTag (tagRef, property.value)
-
+const version = execSync('mvn -q --non-recursive --batch-mode -Dexpression=project.version -DforceStdout help:evaluate', { encoding: 'utf-8' });  // the default is 'buffer'
+console.log(`Version: ${version}`)
+await git.addAnnotatedTag (version, property.value)
 
 /*
  * push to origin
  */
-git.push('origin', tagRef, targetBranch, sourceBranch)
+git.push('origin', version, targetBranch, sourceBranch)
